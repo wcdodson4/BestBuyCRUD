@@ -28,3 +28,4 @@ C:\Users\William\Desktop\Repos\BestBuyCRUD\BestBuyCRUD\bin\Debug\netcoreapp3.1\r
 C:\Users\William\Desktop\Repos\BestBuyCRUD\BestBuyCRUD\obj\Debug\netcoreapp3.1\BestBuyCRUD.csproj.CopyComplete
 C:\Users\William\Desktop\Repos\BestBuyCRUD\BestBuyCRUD\obj\Debug\netcoreapp3.1\BestBuyCRUD.dll
 C:\Users\William\Desktop\Repos\BestBuyCRUD\BestBuyCRUD\obj\Debug\netcoreapp3.1\BestBuyCRUD.pdb
+C:\Users\William\Desktop\Repos\BestBuyCRUD\BestBuyCRUD\bin\Debug\netcoreapp3.1\Dapper.dll

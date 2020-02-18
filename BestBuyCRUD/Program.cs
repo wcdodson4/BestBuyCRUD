@@ -13,6 +13,7 @@ namespace BestBuyCRUD
             IDbConnection conn = new MySqlConnection();
             conn.ConnectionString = System.IO.File.ReadAllText("ConnectionString.txt");
             var prodRepo = new DapperProductRepository(conn);
+
             //-------creating a new product------------------------
             Console.WriteLine("What is the new product's name?");
             var nameResponse = Console.ReadLine();
@@ -21,18 +22,21 @@ namespace BestBuyCRUD
             Console.WriteLine("What is the new product's category id?");
             var categoryResponse = int.Parse(Console.ReadLine());
             prodRepo.CreateProduct(nameResponse, priceResponse, categoryResponse);
+
             //-----------updating a product-------------------------
-            Console.WriteLine("What product would you like to update?");
-            var oldProd = Console.ReadLine();
+            Console.WriteLine("What product would you like to update? (Product ID)");
+            var oldProd = int.Parse(Console.ReadLine());
             Console.WriteLine("What is the product's new name?");
             var newProd = Console.ReadLine();
             Console.WriteLine("What is the product's new price?");
             var newPrice = double.Parse(Console.ReadLine());
             prodRepo.UpdateProduct(oldProd, newProd, newPrice);
+
             //-------------deleting a product-------------------------
             Console.WriteLine("Which product would you like to delete? (Product ID)");
             var delProd = int.Parse(Console.ReadLine());
             prodRepo.DeleteProduct(delProd);
+
             //-------------returning list of all products-------------
             var products = prodRepo.GetAllProducts();
             Console.WriteLine("ID --- Name --- Price --- Category ID");
@@ -40,13 +44,15 @@ namespace BestBuyCRUD
             {
                 Console.WriteLine($"{prod.ProductID} {prod.Name} {prod.Price} {prod.CategoryID}");
             }
+
             //-------------creating a new department-------------------
-            var repo = new DapperDepartmentRepository(conn);
+            var deptRepo = new DapperDepartmentRepository(conn);
             Console.WriteLine("What is the new department's name?");
             var response = Console.ReadLine();
-            repo.InsertNewDepartment(response);
+            deptRepo.InsertNewDepartment(response);
+
             //--------------returning list of all departments--------------
-            var departments = repo.GetAllDepartments();
+            var departments = deptRepo.GetAllDepartments();
             Console.WriteLine("ID --- Name");
             foreach(var dept in departments)
             {

@@ -32,10 +32,10 @@ namespace BestBuyCRUD
                 new { productName = newProductName, productPrice = newProductPrice, productCategoryID = newProductCategoryID });
         }
 
-        public void UpdateProduct(string oldProductName, string newProductName, double newProductPrice)
+        public void UpdateProduct(int productID, string newProductName, double newProductPrice)
         {
-            _connection.Execute("UPDATE Products SET Name = @productName, Price = @productPrice WHERE Name = @productNameOld;",
-                new { productName = newProductName, productNameOld = oldProductName, productPrice = newProductPrice });
+            _connection.Execute("UPDATE Products SET Name = @productName, Price = @productPrice WHERE ProductID = @oldProductID;",
+                new { productName = newProductName, oldProductID = productID, productPrice = newProductPrice });
         }
 
         public void DeleteProduct(int productid)

@@ -10,5 +10,7 @@ namespace BestBuyCRUD
         public IEnumerable<Product> GetAllProducts();
 
         public void CreateProduct(string name, double price, int categoryid);
+        public void UpdateProduct(int productid, string newName, double newPrice);
+        public void DeleteProduct(int id);
     }
 }
